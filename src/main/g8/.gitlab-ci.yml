@@ -1,0 +1,22 @@
+image: guoguojin/ubuntu-scala:latest
+
+stages:
+  - test
+  # - deploy  # we don't need this yet but we should probably publish to our own repository somewhere
+
+before_script:
+  ## Nothing at the moment, the ubuntu-scala image should have everything we need to do a build
+
+test:
+  stage: test
+  tags:
+  - $gitlab_ci_tags$
+  script:
+  - echo "Executing test stage"
+  #- sbt clean coverage test coverageReport
+
+# Leave commented for now as we don't have to deploy it anywhere yet
+#deploy:
+#  stage: deploy
+#  script:
+#    # Do something here
