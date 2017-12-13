@@ -1,4 +1,4 @@
-name := ""
+name := "$name;format="lower,hyphen"$"
 
 lazy val commonSettings = Seq(
   organization := "com.birchwoodlangham",
