@@ -1,9 +1,9 @@
-name := ""
+name := "$name;format="lower,hyphen"$"
 
 lazy val commonSettings = Seq(
-  organization := "com.birchwoodlangham",
-  version := "0.0.1-SNAPSHOT",
-  scalaVersion in ThisBuild := "2.12.4",
+  organization := "$organization$",
+  version := "$version$",
+  scalaVersion in ThisBuild := "$scala_version$",
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-encoding", "utf8"),
   javacOptions ++= Seq("-encoding", "UTF-8")
 )
@@ -14,14 +14,14 @@ lazy val commonResolvers = Seq(
   "Sonatype Nexus Snapshots" at "http://reaper.birchwoodlangham.com:8081/repository/maven-snapshots/"
 )
 
-val nscalaTimeVersion = "2.16.0" // https://github.com/nscala-time/nscala-time
-val scalaLoggingVersion = "3.7.2" // https://github.com/typesafehub/scala-logging
-val logbackVersion = "1.2.3" // http://logback.qos.ch/
-val configVersion = "1.3.1" // https://github.com/typesafehub/config
-val scalaTestVersion = "3.0.4" // http://www.scalatest.org/
-val scalacticVersion = "3.0.4" // http://www.scalatest.org/
-val akkaHttpVersion = "10.0.11" // http://doc.akka.io/docs/akka-http/current/
-val akkaVersion = "2.5.7" // http://akka.io/docs
+val nscalaTimeVersion = "$nscalaTimeVersion$" // https://github.com/nscala-time/nscala-time
+val scalaLoggingVersion = "$scalaLoggingVersion$" // https://github.com/typesafehub/scala-logging
+val logbackVersion = "$logbackVersion$" // http://logback.qos.ch/
+val configVersion = "$configVersion$" // https://github.com/typesafehub/config
+val scalaTestVersion = "$scalaTestVersion$" // http://www.scalatest.org/
+val scalacticVersion = "$scalacticVersion$" // http://www.scalatest.org/
+val akkaHttpVersion = "$akkaHttpVersion$" // http://doc.akka.io/docs/akka-http/current/
+val akkaVersion = "$akkaVersion$" // http://akka.io/docs
 
 lazy val commonDependencies = Seq(
   "com.github.nscala-time" %% "nscala-time" % nscalaTimeVersion,  // use nscala-time for time manipulation
