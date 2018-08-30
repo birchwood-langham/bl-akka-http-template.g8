@@ -1,6 +1,6 @@
 package $organization$
 
-import com.birchwoodlangham.RestApiRoutes
+import $organization$.RestApiRoutes
 
 object Main extends App with RestApiRoutes {
   run()

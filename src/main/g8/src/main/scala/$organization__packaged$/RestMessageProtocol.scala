@@ -1,4 +1,4 @@
-package com.birchwoodlangham
+package $organization$
 
 import akka.http.scaladsl.unmarshalling.{FromEntityUnmarshaller, PredefinedFromEntityUnmarshallers}
 import spray.json.{DefaultJsonProtocol, RootJsonFormat}

@@ -4,8 +4,8 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity, StatusCodes}
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import akka.http.scaladsl.unmarshalling.Unmarshal
 import akka.testkit.TestActorRef
-import com.birchwoodlangham.RestMessageProtocol.{Request, Response}
-import com.birchwoodlangham.{RestApiRoutes, RestMessageJsonProtocol, RestRequestHandler}
+import $organization$.RestMessageProtocol.{Request, Response}
+import $organization$.{RestApiRoutes, RestMessageJsonProtocol, RestRequestHandler}
 import org.scalatest.{Matchers, WordSpec}
 import spray.json._
 

@@ -1,4 +1,4 @@
-package com.birchwoodlangham
+package $organization$
 
 import akka.actor.{ActorRef, ActorSystem}
 import akka.http.scaladsl.Http

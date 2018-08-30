@@ -1,14 +1,21 @@
 <configuration>
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%date{HH:mm:ss} %-5level %logger{0} {%class %method} - %msg%n</pattern>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{0} {%class %method} - %msg%n</pattern>
         </encoder>
     </appender>
-    <appender name="file" class="ch.qos.logback.core.FileAppender">
-        <file>${log-file:-scala-logging.log}</file>
-        <encoder>
-            <pattern>%date{HH:mm:ss} %-5level %logger{0} {%class %method} - %msg%n</pattern>
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/$name;format="lower,hyphen"$.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{0} {%class %method} - %msg%n</pattern>
         </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <!-- rollover daily -->
+          <fileNamePattern>./logs/archived/$name;format="lower,hyphen"$-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+          <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				    <maxFileSize>100MB</maxFileSize>
+			    </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
     </appender>
     <root level="info">
         <appender-ref ref="console"/>

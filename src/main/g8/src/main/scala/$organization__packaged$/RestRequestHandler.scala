@@ -1,4 +1,4 @@
-package com.birchwoodlangham
+package $organization$
 
 import akka.actor.{Actor, ActorLogging, Props}
 
@@ -16,5 +16,3 @@ class RestRequestHandler extends Actor with ActorLogging {
 object RestRequestHandler {
   def props(): Props = Props[RestRequestHandler]
 }
-
-
